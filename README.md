@@ -5,11 +5,11 @@ Como recibir notificaciones de las alertas del IDS Snort en Telegram?
 
 1°Habiendo configurado y personalizado previamente las alertas y las conexiones a la red que queremos analizar
 
-![imagen](https://github.com/AxelEncina/Snort-Notify/assets/83794091/00771a86-368c-4f23-b51e-cdc1917d3702)
+![imagen](https://github.com/AxelEncina/Snort-Notify/assets/83794091/fe058e1b-4ba8-4498-bfc3-1ba723327adb)
 
 2°En el archivo bot-tele.sh añadir el token del chat de telegram junto con el ID creados mediante el Bot de Telegram
 
-3°Activar el archivo .sh para que escuche las alertas
+3°Activar el archivo .sh para que escuche las alertas (que en realidad lo que hace es mapear con el archivo .log que almacena las alertas detectadas)
 
 ![imagen](https://github.com/AxelEncina/Snort-Notify/assets/83794091/538644ad-cc27-49fb-8fd2-64fc1a62a498)
 
