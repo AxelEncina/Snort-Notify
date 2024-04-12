@@ -8,7 +8,7 @@ Como recibir notificaciones de las alertas del IDS Snort en Telegram?
 ```
 alert icmp $HOME_NET any -> any any (msg:"SOMEONE IS DOING PING";sid:12345;rev:3;)
 
-alert tcp any any ->$HOME_NET 22 (msg:"DO YOU TRYING TO HACK ME?";falgs:5;sid:10001;)
+alert tcp any any -> $HOME_NET 22 (msg:"DO YOU TRYING TO HACK ME?";fLags:5;sid:10001;)
 
 alert tcp $EXTERNAL_NET any -> $HOME_NET 3306 (msg:"MySQL EXTERNAL INTRUSION DETECTED";sid:1776;rev:3;)
 
@@ -22,7 +22,7 @@ alert tcp $HOME_NET any -> any any (content:"www.facebook.com";msg:"SOMEONE IS A
 ![imagen](https://github.com/AxelEncina/Snort-Notify/assets/83794091/538644ad-cc27-49fb-8fd2-64fc1a62a498)
 
 
-4°Ejecutar el comando de snort con los siguientes parametros
+4°Ejecutar el comando de snort con los siguientes parametros, donde la primer dirección es donde se almacenan los logs y la segunda a donde vamos a copiar estos para que los mapee el bot
 
 ```
 sudo snort -c snort.conf -l /PATH/ -d -A console > /PATH/
