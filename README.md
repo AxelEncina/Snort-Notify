@@ -1,18 +1,19 @@
 # Snort-Notify
 Como recibir notificaciones de las alertas del IDS Snort en Telegram?
 
-```
-function test() {
-  console.log("notice the blank line before this function?");
-}
-```
-
-
 ![imagen](https://github.com/AxelEncina/Snort-Notify/assets/83794091/62608964-b9bf-46dd-96da-a0f3a524e247)
 
 1°Habiendo configurado y personalizado previamente las alertas y las conexiones a la red que queremos analizar
 
-![imagen](https://github.com/AxelEncina/Snort-Notify/assets/83794091/fe058e1b-4ba8-4498-bfc3-1ba723327adb)
+```
+alert icmp $HOME_NET any -> any any (msg:"SOMEONE IS DOING PING";sid:12345;rev:3;)
+
+alert tcp any any ->$HOME_NET 22 (msg:"DO YOU TRYING TO HACK ME?";falgs:5;sid:10001;)
+
+alert tcp $EXTERNAL_NET any -> $HOME_NET 3306 (msg:"MySQL EXTERNAL INTRUSION DETECTED";sid:1776;rev:3;)
+
+alert tcp $HOME_NET any -> any any (content:"www.facebook.com";msg:"SOMEONE IS ACCESING TO FACEBOOK DURING WORK HOURS!";sid:10008;rev:3;)
+```
 
 2°En el archivo bot-tele.sh añadir el token del chat de telegram junto con el ID creados mediante el Bot de Telegram
 
@@ -23,7 +24,9 @@ function test() {
 
 4°Ejecutar el comando de snort con los siguientes parametros
 
-![imagen](https://github.com/AxelEncina/Snort-Notify/assets/83794091/bf0d4193-271a-4805-9f29-a7d80cf3877d)
+```
+sudo snort -c snort.conf -l /PATH/ -d -A console > /PATH/
+```
 
 Norificación recibida:
 
