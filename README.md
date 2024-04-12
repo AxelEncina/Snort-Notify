@@ -1,7 +1,8 @@
 # Snort-Notify
 Como recibir notificaciones de las alertas del IDS Snort en Telegram?
 
-![imagen](https://github.com/AxelEncina/Snort-Notify/assets/83794091/62608964-b9bf-46dd-96da-a0f3a524e247)
+![image](https://github.com/AxelEncina/Snort-Notify/assets/83794091/6bc89236-a18f-460e-bec5-174b291961b4)
+
 
 1°Habiendo configurado y personalizado previamente las alertas y las conexiones a la red que queremos analizar
 
